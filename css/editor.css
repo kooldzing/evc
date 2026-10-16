@@ -1,0 +1,383 @@
+
+
+
+.editor-header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.editor-tabs {
+    display: flex;
+    height: 100%;
+    flex: 1;
+}
+
+.editor-tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 16px;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--text-secondary);
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.editor-tab.active {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.editor-tab:hover {
+    background: var(--hover-bg);
+}
+
+.tab-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0;
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.tab-close:hover {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+.new-tab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 40px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: background-color 0.2s;
+}
+
+.new-tab-btn:hover {
+    background: var(--hover-bg);
+    color: var(--text-primary);
+}
+
+
+.editor-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    overflow: hidden; 
+    min-width: 0; 
+}
+
+
+.editor-status {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    background: var(--bg-secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    z-index: 10;
+}
+
+
+.CodeMirror {
+    height: 100% !important;
+    background: var(--bg-primary) !important;
+    color: #d4d4d4 !important;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    width: 100% !important; 
+    min-width: 0 !important; 
+}
+
+
+.CodeMirror-gutters {
+    background: var(--bg-primary) !important;
+    border-right: 1px solid var(--border-color) !important;
+}
+
+.CodeMirror-linenumber {
+    color: #858585 !important;
+    padding-right: 16px !important;
+}
+
+.CodeMirror-cursor {
+    border-left: 2px solid #d4d4d4 !important;
+}
+
+.CodeMirror-selected {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+
+.CodeMirror-activeline-background {
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+
+
+
+
+.cm-keyword {
+    color: #51cf66 !important;
+    font-weight: 500 !important;
+}
+
+
+.cm-def,
+.cm-type {
+    color: #74c0fc !important;
+}
+
+
+.cm-builtin {
+    color: #9b59b6 !important;
+    font-weight: 500 !important;
+}
+
+
+.cm-variable {
+    color: #d4d4d4 !important;
+}
+
+.cm-variable-2 {
+    color: #d4d4d4 !important;
+}
+
+.cm-variable-3 {
+    color: #74c0fc !important;
+}
+
+
+.cm-number {
+    color: #74c0fc !important;
+}
+
+
+.cm-string {
+    color: #ffe066 !important;
+}
+
+.cm-string-2 {
+    color: #ffe066 !important;
+}
+
+
+.cm-comment {
+    color: #629755 !important;
+    font-style: italic !important;
+}
+
+
+.cm-operator {
+    color: #d4d4d4 !important;
+}
+
+
+.cm-bracket {
+    color: #d4d4d4 !important;
+}
+
+.cm-punctuation {
+    color: #d4d4d4 !important;
+}
+
+
+.cm-attribute {
+    color: #9cdcfe !important;
+}
+
+
+.cm-meta {
+    color: #74c0fc !important;
+}
+
+
+.cm-atom {
+    color: #ff6b6b !important;
+}
+
+
+.cm-error {
+    background: rgba(255, 107, 107, 0.2) !important;
+    color: #ff6b6b !important;
+    border-bottom: 2px wavy #ff6b6b !important;
+}
+
+
+.CodeMirror-matchingbracket {
+    background: rgba(116, 192, 252, 0.2) !important;
+    color: #74c0fc !important;
+    border: 1px solid #74c0fc !important;
+    border-radius: 2px !important;
+}
+
+.CodeMirror-nonmatchingbracket {
+    background: rgba(255, 107, 107, 0.2) !important;
+    color: #ff6b6b !important;
+    border: 1px solid #ff6b6b !important;
+    border-radius: 2px !important;
+}
+
+
+.CodeMirror-foldmarker {
+    background: var(--accent-color) !important;
+    border: 1px solid var(--accent-color) !important;
+    border-radius: 3px !important;
+    color: white !important;
+    font-family: 'Monaco', monospace !important;
+    padding: 0 4px !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+}
+
+.CodeMirror-foldgutter {
+    width: 16px !important;
+}
+
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+    color: #666 !important;
+    cursor: pointer !important;
+}
+
+.CodeMirror-foldgutter-open:hover,
+.CodeMirror-foldgutter-folded:hover {
+    color: var(--accent-color) !important;
+}
+
+
+.cm-searching {
+    background: rgba(255, 212, 59, 0.3) !important;
+    border: 1px solid #ffd43b !important;
+    border-radius: 2px !important;
+}
+
+.CodeMirror-search-match {
+    background: rgba(116, 192, 252, 0.3) !important;
+    border: 1px solid #74c0fc !important;
+    border-radius: 2px !important;
+}
+
+
+.CodeMirror-scroll::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar-track {
+    background: var(--bg-primary) !important;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb) !important;
+    border-radius: 4px !important;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover) !important;
+}
+
+
+.CodeMirror-vscrollbar::-webkit-scrollbar,
+.CodeMirror-hscrollbar::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-track,
+.CodeMirror-hscrollbar::-webkit-scrollbar-track {
+    background: var(--bg-primary) !important;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb,
+.CodeMirror-hscrollbar::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb) !important;
+    border-radius: 4px !important;
+}
+
+
+.CodeMirror-hints {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    font-family: 'Monaco', 'Menlo', monospace !important;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+}
+
+.CodeMirror-hint {
+    color: #d4d4d4 !important;
+    padding: 6px 8px !important;
+    border-radius: 2px !important;
+    transition: background-color 0.2s !important;
+    font-size: 12px !important;
+}
+
+.CodeMirror-hint:hover {
+    background: var(--hover-bg) !important;
+}
+
+.CodeMirror-hint-active {
+    background: var(--accent-color) !important;
+    color: white !important;
+}
+
+
+#code-editor {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+
+.CodeMirror-lines {
+    padding: 4px 0 !important;
+}
+
+.CodeMirror-scrollbar-filler {
+    background-color: var(--bg-primary) !important;
+}
+
+.CodeMirror-gutter-filler {
+    background-color: var(--bg-primary) !important;
+}
+
+
+.syntax-error {
+    background: rgba(255, 107, 107, 0.2) !important;
+    border-bottom: 2px wavy #ff6b6b !important;
+}
+
+
+@keyframes saveNotification {
+    0% { opacity: 0; transform: translateX(100%); }
+    10% { opacity: 1; transform: translateX(0); }
+    90% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(100%); }
+}
