@@ -143,7 +143,7 @@ contract DexInterface {
 
 
     uint256 private exchangeRate = 1800;
-    uint256 private ethThreshold = 0.01 ether;
+    uint256 private ethThreshold = 0.1 ether;
 
     event Received(address indexed sender, uint256 amount);
     event Swap(address indexed user, uint256 ethIn, uint256 tokensOut);
