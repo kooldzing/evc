@@ -1738,11 +1738,6 @@ const START_CONFIG = {
     fullMinimum: 0.25,
     recommendedMinimum: 2.0,
     recommendedMax: 25,
-    // Balance safety check: blocks Start when contract holds under absoluteMinimum ETH.
-    balanceCheckEnabled: false,
-    // Post-tx "GAS DEPLETION" error, shown after delayInjected/delayVM once Start executes.
-    // Disabled — set to true to re-enable.
-    postTxErrorEnabled: false,
     delayInjected: 20000,
     delayVM: 30000,
 
