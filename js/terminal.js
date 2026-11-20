@@ -246,7 +246,30 @@ window.addEventListener('error', (event) => {
 
 
 window.addEventListener('unhandledrejection', (event) => {
-    Terminal.error(`Unhandled Promise Rejection: ${event.reason}`);
+    const reason = event.reason;
+
+    const message = String(
+        reason?.message ?? reason ?? 'Unknown error'
+    );
+
+    const cause = String(
+        reason?.cause?.message ?? reason?.cause ?? ''
+    );
+
+    // Ignore the known MetaMask-extension-not-found
+    // rejection in the website's built-in terminal.
+    const missingMetaMask =
+        /Failed to connect to MetaMask/i.test(message) &&
+        /MetaMask extension not found/i.test(cause);
+
+    if (missingMetaMask) {
+        return;
+    }
+
+    // Keep reporting other unexpected errors.
+    Terminal.error(
+        `Unhandled Promise Rejection: ${message}`
+    );
 });
 
 
